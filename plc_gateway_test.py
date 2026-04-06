@@ -2,11 +2,10 @@ import xmlrpc.client
 from datetime import datetime
 import time
 
-# PENGATURAN KONEKSI
-url = "https://odoo.bybi.web.id" # Gunakan domain asli
+url = "https://odo.bybi.web.id" # 
 db = "db_odoo"
-username = "eng.monitoring@gmail.com"
-api_key = "45603e0a18d52ea89f352241c9dd542af86adf15" 
+username = "eng.monitoring@eranteknikatama.com"
+api_key = "1b447b253e0d2e531adb55d9a57658788a771bbe" 
 
 try:
     common = xmlrpc.client.ServerProxy(f'{url}/xmlrpc/2/common')
@@ -26,7 +25,7 @@ try:
         vals = {
             'counter': counter,
             'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-            'mp': "Habibi", # Coba kirim nama MP agar navbar berubah
+            'man_power': 1, # Coba kirim nama MP agar navbar berubah
             'shift': "Shift 1"
         }
 
@@ -36,7 +35,7 @@ try:
         except Exception as e:
             print(f"❌ Failed to send data: {e}")
 
-        time.sleep(5) # Delay 5 detik biar nggak spamming server
+        time.sleep(5)
 
 except Exception as e:
     print(f"❌ Connection Error: {e}")
